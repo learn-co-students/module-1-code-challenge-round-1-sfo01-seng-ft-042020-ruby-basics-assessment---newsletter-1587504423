@@ -30,10 +30,12 @@ ARTICLES = [
 def calculate_recipients
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
+  SUBSCRIBERS - UNSUBSCRIBED
+
 end
 
-def first_n_articles(number_of_articles
-  ARTICLES.first(number_of_articles)
+def first_n_articles(number_of_articles)
+  ARTICLES.first(number_of_articles.to_i)
 end
 
 def print_recipients
@@ -54,7 +56,8 @@ def print_many_articles(articles)
 end
 
 def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
+  binding.pry
+  "Flatiron #{campus[:name]}"
 end
 
 def format_subject
@@ -80,7 +83,7 @@ def print_newsletter(number)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
+  
 end
 
 def run
@@ -92,3 +95,28 @@ end
 # When we run "ruby newsletter.rb" in the command line,
 # the 'run' method will be called because we're calling it below.
 run
+
+
+
+# Generating this week's newsletter...
+
+# SUBJECT: Flatiron DC Newsletter - Nov 20, 2019
+
+# RECIPIENTS: rhona@grimes.info, edmond@ko.org, bryant@cummingsfisher.biz
+
+# BODY:
+# Flatiron DC Newsletter - Nov 20, 2019
+
+# Mining
+# by: Destiny Blanda Bruen II
+# The orthogonal features, when combined, can explode into complexity.
+
+# Retail
+# by: Robin Flatley Hilpert
+# In our daily lives as programmers, we process text strings a lot. So I tried to work hard on text processing, namely the string class and regular expressions. Regular expressions are built into the language and are very tuned up for use.
+
+# Technology
+# by: Olevia Torphy Kuvalis
+# Imagine you are writing an email. You are in front of the computer. You are operating the computer, clicking a mouse and typing on a keyboard, but the message will be sent to a human over the internet. So you are working before the computer, but with a human behind the computer.
+
+# Flatiron Newsletter · DC · 1440 G St NW, Washington, DC 20005
