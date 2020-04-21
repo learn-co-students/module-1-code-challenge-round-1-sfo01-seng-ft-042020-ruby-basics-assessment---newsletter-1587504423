@@ -1,5 +1,5 @@
-require 'pry'
 
+require 'pry'
 #########################
 # Data for the newsletter
 #########################
@@ -32,8 +32,8 @@ def calculate_recipients
   # write a method that will return an array of only the subscribers who haven't unsubscribed
 end
 
-def first_n_articles(number_of_articles
-  ARTICLES.first(number_of_articles)
+def first_n_articles(number_of_articles)
+  ARTICLES[0]
 end
 
 def print_recipients
@@ -54,7 +54,7 @@ def print_many_articles(articles)
 end
 
 def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
+  CAMPUS.each { |key, value| puts "Flatiron #{value} Newsletter"}
 end
 
 def format_subject
@@ -80,8 +80,8 @@ def print_newsletter(number)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
 end
+
 
 def run
   # We want our program to print three articles by default,
