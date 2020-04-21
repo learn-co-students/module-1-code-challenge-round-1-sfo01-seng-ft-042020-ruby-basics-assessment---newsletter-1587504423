@@ -28,27 +28,38 @@ ARTICLES = [
 #########################
 
 def calculate_recipients
+
+  SUBSCRIBERS.select {|email| !UNSUBSCRIBED.include?(email)}
+
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
 end
 
-def first_n_articles(number_of_articles
-  ARTICLES.first(number_of_articles)
+def first_n_articles(number_of_articles)
+  ARTICLES.first(number_of_articles).to_s
 end
 
 def print_recipients
+
+calculate_recipients.join(",")
+
   # Write a method that uses the output of calculate_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
 end
 
 def print_one_article(article)
+  puts "#{article[:"title"]}"
+  puts "#{article[:"author"]}"
+  puts "#{article[:"text"]}"
+
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
 end
 
 def print_many_articles(articles)
+
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
 end
@@ -80,7 +91,6 @@ def print_newsletter(number)
   print_many_articles(articles)
   puts format_footer(CAMPUS)
 
-  end
 end
 
 def run
@@ -91,4 +101,5 @@ end
 
 # When we run "ruby newsletter.rb" in the command line,
 # the 'run' method will be called because we're calling it below.
+
 run
